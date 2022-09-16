@@ -5,9 +5,6 @@ export const config = {
     "database": process.env.POSTGRESS_DB,
     "host": process.env.POSTGRESS_HOST,
     "dialect": "postgres",
-    "aws_reigion": process.env.AWS_REGION,
-    "aws_profile": process.env.AWS_PROFILE,
-    "aws_media_bucket": process.env.AWS_BUCKET,
     "url": process.env.URL
   },
   "prod": {
@@ -19,5 +16,8 @@ export const config = {
   },
   "jwt": {
     "secret": process.env.JWT_SECRET
-  }
+  },
+  "aws_reigion": process.env.AWS_REGION,
+  "aws_profile": process.env.AWS_PROFILE,
+  "aws_media_bucket": process.env.AWS_BUCKET
 }
