@@ -20,7 +20,7 @@ const c = config.dev;
 
   //CORS Should be restricted
   app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", 'http://a5604b1eca0f14dc48679b89888a455b-862486002.us-east-1.elb.amazonaws.com');
+    res.header("Access-Control-Allow-Origin", '*');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
   });
