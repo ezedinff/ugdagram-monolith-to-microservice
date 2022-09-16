@@ -1,10 +1,13 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     service: backend-user
   name: backend-user
 spec:
+  selector:
+    matchLabels:
+      service: backend-user
   replicas: 1
   template:
     metadata:
@@ -20,7 +23,7 @@ spec:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
+            memory: "1.5Gi"
             cpu: "500m"      
         env:
         - name: URL
