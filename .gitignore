@@ -1,8 +1,7 @@
 .vscode/
 .DS_Store
-.terraform/
-terraform.tfstate*
-terraform.tfvars
-tf.json
-udagram-kubeconfig
-udagram.tar.gz
+.idea/
+node_modules/
+deployment/k8s/env-secret.yaml
+deployment/k8s/aws-secret.yaml
+deployment/k8s/env-configmap.yaml
