@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import { sequelize } from './sequelize';
 
@@ -18,12 +19,19 @@ const c = config.dev;
   
   app.use(bodyParser.json());
 
-  //CORS Should be restricted
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    next();
-  });
+  // We set the CORS origin to * so that we don't need to
+  // worry about the complexities of CORS this lesson. It's
+  // something that will be covered in the next course.
+  app.use(cors({
+    allowedHeaders: [
+      'Origin', 'X-Requested-With',
+      'Content-Type', 'Accept',
+      'X-Access-Token', 'Authorization',
+    ],
+    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    preflightContinue: true,
+    origin: '*',
+  }));
 
   app.use('/api/v0/', IndexRouter)
 
